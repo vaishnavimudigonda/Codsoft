@@ -1,0 +1,19 @@
+import nltk
+from nltk.chat.util import Chat, reflections
+
+# Define pattern-response pairs
+pairs = [
+    ("What's the weather today?", ["The weather in your area is sunny."]),
+    ("Tell me a joke", ["Why did the scarecrow win an award? Because he was outstanding in his field!"]),
+    # Add more patterns and responses here
+]
+
+# Create a chatbot
+chatbot = Chat(pairs, reflections)
+
+# Start chatting
+while True:
+    user_input = input("You: ")
+    if user_input.lower() == "quit":
+        break
+    print("Chatbot:", chatbot.respond(user_input))
